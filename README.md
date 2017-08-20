@@ -12,39 +12,6 @@ Just run:
 bash -c "$(wget -O - https://raw.githubusercontent.com/fdaciuk/install-linux/master/install.sh)"
 ```
 
----
-
-**Apricity (Arch Linux like):**
-
-```console
-bash -c "$(wget -O - https://raw.githubusercontent.com/fdaciuk/install-linux/master/apricity-install.sh)"
-```
-
-To install some softwares, you will need `yaourt`.
-
-Edit your `/etc/pacman.conf`, adding this lines:
-
-```
-[archlinuxfr]
-Server = http://repo.archlinux.fr/$arch
-```
-
-After that, update the system:
-
-```console
-sudo pacman -Sy
-```
-
-If `yaourt` is not installed, install it:
-
-```console
-sudo pacman -S yaourt
-```
-
-Then, use `yaourt` -S <package-name> to install any package ;)
-
----
-
 ## Softwares that will be installed:
 
 - XSel
@@ -107,12 +74,42 @@ ssh -T git@github.com
 ssh -T git@bitbucket.com
 ```
 
+
 **Generate GPG Keys:**
 
 - Follow this steps: https://help.github.com/articles/generating-a-new-gpg-key/
 - Telling Git about your GPG Keys: https://help.github.com/articles/telling-git-about-your-gpg-key/
 
-Then, just commit using `git commit -S` =)
+Then, just commit using ``` `git commit -S` ```
+
+
+**configure postgreSQL**
+By default Postgres creates a postgres user and is the only user who can connect to the server. We’ll want to create ourselves on the server with superuser capabilities with the same name as our login name:
+
+```sh
+sudo -u postgres createuser --superuser $USER
+```
+
+Enter your desired password when prompted.
+
+Next, we’ll have to create a database with the same name as our login name since this is what Postgres expects by default when connecting to the server with your login name:
+
+```sh
+sudo -u postgres createdb $USER
+```
+
+Navigate to your home directory and enter the following command to create the .psql_history in order to save your history:
+
+```sh
+touch .psql_history
+```
+
+Type psql on your terminal to connect to the server:
+```sh
+psql
+```
+
+Enter ```\q``` to quit and you should now be back in the postgres Linux command prompt.
 
 ## Install Top Icons (Gnome Shell)
 
@@ -129,77 +126,7 @@ fonte: http://ssup2.iptime.org/wiki/Ubuntu_Consolas_Font_Install
 ```console
 bash -c "$(wget -O - https://gist.githubusercontent.com/fdaciuk/8b3269a3d797ee723672/raw/c8344f9cd4f91a8ae69535c833253ae87ef86d5b/sourcecodepro.sh)"
 ```
-
-## Useful commands
-
-**Auto mount a partition:**
-
-Add entry on your `/etc/fstab` file:
-
-```fstab
-# <file system> <mount point>   <type>  <options>       <dump>  <pass>
-/dev/sdaX       /media/storage  ext4    defaults        0       1
-```
-
-[**Relase idle memory**](http://www.vivaolinux.com.br/dica/Liberando-memoria-RAM-ociosa)
-
-```console
-sudo sysctl -w vm.drop_caches=3
-```
-
-**Clear swap**
-
-```console
-sudo swapoff -a
-sudo swapon -a
-```
-
-**Removing dpkg package**
-
-```console
-sudo dpkg -r <package>
-```
-
-**Stop services from startup without remove**
-
-```console
-sudo update-rc.d -f <service> remove
-```
-
-**Check which services are running**
-
-```console
-service --status-all
-```
-
-## Clone an installation
-
-After boot from a Live USB, run on terminal:
-
-```
-dd if=/dev/sdb3 of=/dev/sda3
-```
-
-Where `sdb3` is the origin, and `sda3` is the destination.
-
-After that, run:
-
-```
-sudo mount /dev/sda3 /mnt 
-```
-
-Where sda3 contains the recently copied boot and root partitions.
-
-```sh
-sudo mount --bind /dev/ /mnt/dev/
-sudo mount -t /proc none /mnt/proc
-sudo chroot /mnt
-# note this is `sda` not `sda3`
-sudo grub-install /dev/sda 
-sudo update-grub
-exit
-```
-
 ## License
+Modified from [fdaciuk](https://github.com/fdaciuk/install-linux)
 
-[MIT](https://github.com/fdaciuk/licenses/blob/master/MIT-LICENSE.md) © Fernando Daciuk
+[MIT](https://raw.githubusercontent.com/mussaimo/licenses/master/MIT-License.md) © Moses Okemwa
