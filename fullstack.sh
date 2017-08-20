@@ -45,14 +45,6 @@ if has_not postgresql; then
 fi
 ok "PostgreSQL"
 
-if has_not pip; then
-  sudo apt-get install python-pip python-dev build-essential
-  sudo pip install --upgrade pip 
-  sudo pip install --upgrade virtualenv
-fi
-ok "pip"
-
-
 if has_not apache2; then
   sudo apt-get install -y apache2
   
@@ -80,16 +72,33 @@ if has_not mysql; then
 fi
 ok "MySQL"
 
+if has_not heroku; then
+  wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+fi
+ok "Heroku Toolbelt"
+
 # python
 if has_not python3.6; then
   sudo apt-get install python3.6
 fi
 ok "Python3.6"
 
-if has_not heroku; then
-  wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+if has_not pip; then
+  sudo apt-get install build-essential \
+    python-dev \
+    python3-dev \
+    python-pip \
+    python3-pip
+  sudo pip install --user --upgrade pip
+  export PATH=~/.local/bin:$PATH
+  source ~/.bashrc
+  sudo pip install --upgrade pip 
+  sudo pip install --upgrade virtualenv
 fi
-ok "Heroku Toolbelt"
+ok "pip"
+
+# django for python 23
+sudo apt-get install python3-django
 
 # Clean up
 sudo apt-get autoclean -y
