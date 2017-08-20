@@ -108,11 +108,6 @@ https://github.com/phocean/TopIcons-plus
 
 fonte: http://ssup2.iptime.org/wiki/Ubuntu_Consolas_Font_Install
 
-**Source Code PRO:**
-
-```console
-bash -c "$(wget -O - https://gist.githubusercontent.com/fdaciuk/8b3269a3d797ee723672/raw/c8344f9cd4f91a8ae69535c833253ae87ef86d5b/sourcecodepro.sh)"
-```
 ## License
 Modified from [fdaciuk](https://github.com/fdaciuk/install-linux)
 
