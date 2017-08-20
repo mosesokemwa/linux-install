@@ -80,6 +80,12 @@ if has_not mysql; then
 fi
 ok "MySQL"
 
+# python
+if has_not python3.6; then
+  sudo apt-get install python3.6
+fi
+ok "Python3.6"
+
 if has_not heroku; then
   wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 fi
