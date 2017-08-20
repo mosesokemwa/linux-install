@@ -109,7 +109,7 @@ sudo apt-get -f install
 sudo apt-get upgrade
 sudo apt-get dist-upgrade
 
-ok "Sytem upgraded"
+ok "System upgraded"
 
 # Restarting machine
 sudo shutdown -r 0
