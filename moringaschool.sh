@@ -82,13 +82,6 @@ if has_not skype; then
 fi
 ok "Skype"
 
-# TODO
-# installating python
-if has_not python3.6; then
-  sudo apt-get install python3.6
-fi
-ok "Python3.6"
-
 if has_not composer; then
   curl -sS https://getcomposer.org/installer | php
   sudo mv composer.phar /usr/local/bin/composer
