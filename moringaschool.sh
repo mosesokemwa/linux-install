@@ -42,13 +42,6 @@ ok "Curl"
 ok "VLC"
 ok "Git"
 
-if has_not pip; then
-  sudo apt-get install python-pip python-dev build-essential
-  sudo pip install --upgrade pip 
-  sudo pip install --upgrade virtualenv
-fi
-ok "pip"
-
 if has_not atom; then
   sudo add-apt-repository ppa:webupd8team/atom
   sudo apt update
@@ -89,46 +82,6 @@ if has_not skype; then
 fi
 ok "Skype"
 
-if ! [[ -d "$HOME/.nvm" ]]; then
-  NODE_VERSION=4
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
-  source ~/.bashrc
-  nvm install $NODE_VERSION
-  nvm use $NODE_VERSION
-  nvm alias default $NODE_VERSION
-fi
-ok "NVM"
-
-npm i -g nodemon hmh-cli clima
-ok "NodeJS global modules"
-
-if has_not apache2; then
-  sudo apt-get install -y apache2
-  
-  # Setup vhosts
-  curl -sS -O https://gist.githubusercontent.com/claudiosmweb/ab41b5e8693eea7c02b8/raw/392305085efa1347c26498a1a5027037ae9c73be/000-default.conf
-  sudo rm /etc/apache2/sites-available/000-default.conf
-  sudo mv 000-default.conf /etc/apache2/sites-available
-  ok "Setup vhosts"
-    
-  # Enable rewrite
-  sudo a2enmod rewrite
-  ok "Enable Apache rewrite"
-    
-  # Restart Apache2
-  sudo service apache2 restart
-  ok "Restart Apache"
-  
-  sudo chown -R $USER:$USER /var/www
-  ln -s /var/www ~/code
-fi
-ok "Apache"
-
-if has_not mysql; then
-  sudo apt-get install -y mysql-server
-fi
-ok "MySQL"
-
 # TODO
 # installating python
 if has_not python3.6; then
@@ -147,17 +100,6 @@ if ! [[ -d "$HOME/.oh-my-zsh" ]]; then
   chsh -s `which zsh`
 fi
 ok "OH My ZSH"
-
-if has_not heroku; then
-  wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-fi
-ok "Heroku Toolbelt"
-
-# change to PostgressSQL
-if has_not mongod; then
-  sudo bash -c "$(wget -O - https://raw.githubusercontent.com/fdaciuk/install-linux/master/mongo-ubuntu.sh)"
-fi
-ok "Mongo DB"
 
 # installing wakatime
 sudo pip install wakatime
