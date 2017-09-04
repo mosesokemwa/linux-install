@@ -5,58 +5,43 @@
 ## Usage
 
 Just run:
-
 **Ubuntu (Debian like):**
 
+**prep students**
 ```console
-bash -c "$(wget -O - https://raw.githubusercontent.com/mussaimo/install-linux/master/install.sh)"
+bash -c "$(wget -O - https://raw.githubusercontent.com/mussaimo/linux-install/master/moringaschool.sh)"
 ```
 
+**core fullstack students**
+```console
+bash -c "$(wget -O - https://raw.githubusercontent.com/mussaimo/linux-install/master/fullstack.sh)"
+```
 ## Softwares that will be installed:
 
-- XSel
-- SMB Client
 - HTop
 - OpenSSH Server
-- S3 CMD
 - ZSH
 - Terminator
 - Curl
-- Vim (Gnome)
-- KeePassX
 - VLC
 - Git
-- PlayOnLinux
 - Chrome
-- Docker
 - Dropbox
-- Diffmerge
 - Skype
-- Strem.io
-- Simple Screen Recorder
 - NVM
   - Nodemon
 - Apache 2
 - MySQL
-- PHP
-- PHPMyAdmin
-- WP-CLI
-- Composer
-- Redis Server
 - OH My ZSH
 - Heroku Toolbelt
-- MongoDB
+- postgreSQl
+- python 3.6
+- pip
 
 > Enjoy it ;)
 
-## Other softwares to install
-- [Lightworks](https://www.lwks.com/) (video editor): http://downloads.lwks.com/lwks-12.6.0-amd64.deb
-- [Avocode](https://avocode.com/)
-- [SQLEctron](https://sqlectron.github.io/)
-- [RoboMongo](https://robomongo.org/) (Mongo GUI)
-
 ## After Install
-
+### Basic Configuration
 **Configure GIT:**
 
 ```console
@@ -64,6 +49,8 @@ git config --global user.email "your@email"
 git config --global user.name "Your name"
 ```
 
+
+### Advanced configurations
 **Generate SSH Keys (or copy, if you already have one):**
 
 ```sh
@@ -121,11 +108,6 @@ https://github.com/phocean/TopIcons-plus
 
 fonte: http://ssup2.iptime.org/wiki/Ubuntu_Consolas_Font_Install
 
-**Source Code PRO:**
-
-```console
-bash -c "$(wget -O - https://gist.githubusercontent.com/fdaciuk/8b3269a3d797ee723672/raw/c8344f9cd4f91a8ae69535c833253ae87ef86d5b/sourcecodepro.sh)"
-```
 ## License
 Modified from [fdaciuk](https://github.com/fdaciuk/install-linux)
 
