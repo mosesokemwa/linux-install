@@ -9,7 +9,7 @@ Just run:
 **Ubuntu (Debian like):**
 
 ```console
-bash -c "$(wget -O - https://raw.githubusercontent.com/fdaciuk/install-linux/master/install.sh)"
+bash -c "$(wget -O - https://raw.githubusercontent.com/mussaimo/install-linux/master/install.sh)"
 ```
 
 ## Softwares that will be installed:
