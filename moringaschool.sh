@@ -28,7 +28,6 @@ sudo apt-get install -y \
   htop \
   openssh-server \
   zsh \
-  terminator \
   curl \
   vlc browser-plugin-vlc \
   git git-core
@@ -37,7 +36,6 @@ ok "System updated!"
 ok "HTop"
 ok "OpenSSH Server"
 ok "ZSH"
-ok "Terminator"
 ok "Curl"
 ok "VLC"
 ok "Git"
@@ -60,7 +58,7 @@ ok "Sublime Text Editor 3 installed"
 if has_not chromium-browser; then
  sudo apt-get install chromium-browser
 fi
-ok "Chrome"
+ok "Chromium"
 
 if has nautilus && has_not dropbox; then
   sudo apt-get install nautilus-dropbox -y
@@ -81,12 +79,6 @@ if has_not skype; then
   rm -rf skype-extension*
 fi
 ok "Skype"
-
-if has_not composer; then
-  curl -sS https://getcomposer.org/installer | php
-  sudo mv composer.phar /usr/local/bin/composer
-fi
-ok "Composer"
 
 if ! [[ -d "$HOME/.oh-my-zsh" ]]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
