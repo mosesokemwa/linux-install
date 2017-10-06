@@ -1,4 +1,5 @@
-# install linux
+# Linux Install   
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source-200x33.png?v=103)](https://github.com/ellerbrock/open-source-badge/) 
 
 > Softwares to install on Linux with just one command
 
@@ -111,4 +112,4 @@ fonte: http://ssup2.iptime.org/wiki/Ubuntu_Consolas_Font_Install
 ## License
 Modified from [fdaciuk](https://github.com/fdaciuk/install-linux)
 
-[MIT](https://raw.githubusercontent.com/mussaimo/licenses/master/MIT-License.md) © Moses Okemwa
+[![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](https://github.com/mussaimo/licenses/blob/master/LICENSE) © Moses Okemwa
