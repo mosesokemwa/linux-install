@@ -30,7 +30,8 @@ sudo apt-get install -y \
   autojump \
   meld \
   vlc browser-plugin-vlc \
-  git git-core \
+  git \
+  git-core \
   playonlinux
 
 ok "System updated!"
@@ -52,7 +53,7 @@ ok "PlayOnLinux"
 
 if has_not pip; then
   sudo apt-get install python-pip python-dev build-essential
-  sudo pip install --upgrade pip 
+  sudo pip install --upgrade pip
   sudo pip install --upgrade virtualenv
 fi
 ok "pip"
@@ -142,21 +143,21 @@ ok "NodeJS global modules"
 
 if has_not apache2; then
   sudo apt-get install -y apache2
-  
+
   # Setup vhosts
   curl -sS -O https://gist.githubusercontent.com/claudiosmweb/ab41b5e8693eea7c02b8/raw/392305085efa1347c26498a1a5027037ae9c73be/000-default.conf
   sudo rm /etc/apache2/sites-available/000-default.conf
   sudo mv 000-default.conf /etc/apache2/sites-available
   ok "Setup vhosts"
-    
+
   # Enable rewrite
   sudo a2enmod rewrite
   ok "Enable Apache rewrite"
-    
+
   # Restart Apache2
   sudo service apache2 restart
   ok "Restart Apache"
-  
+
   sudo chown -R $USER:$USER /var/www
   ln -s /var/www ~/code
 fi
@@ -167,29 +168,6 @@ if has_not mysql; then
 fi
 ok "MySQL"
 
-if has_not php; then
-  sudo apt-get install -y php-pear \
-    php5-cli \
-    php5-curl \
-    php5-dev \
-    php5-gd \
-    php5-imagick \
-    php5-imap \
-    php5-mcrypt \
-    php5-pspell \
-    php5-tidy \
-    php5-xmlrpc \
-    php5-mysql \
-    libapache2-mod-php5
-fi
-ok "PHP"
-
-if ! [[ -d "/etc/phpmyadmin" ]]; then
-  sudo apt-get install -y phpmyadmin
-  sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-enabled/phpmyadmin.conf
-fi
-ok "PHPMyAdmin"
-  
 if has_not wp; then
   curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
   chmod +x wp-cli.phar
