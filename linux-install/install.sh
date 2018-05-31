@@ -32,7 +32,8 @@ sudo apt-get install -y \
   vlc browser-plugin-vlc \
   git \
   git-core \
-  playonlinux
+  playonlinux \
+  xclip
 
 ok "System updated!"
 ok "XSel"
@@ -50,6 +51,7 @@ ok "Meld"
 ok "VLC"
 ok "Git"
 ok "PlayOnLinux"
+ok "xclip"
 
 if has_not pip; then
   sudo apt-get install python-pip python-dev build-essential
