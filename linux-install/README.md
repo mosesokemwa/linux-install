@@ -38,6 +38,7 @@ bash -c "$(wget -O - https://raw.githubusercontent.com/mussaimo/linux-install/ma
 - postgreSQl
 - python 3.6
 - pip
+- xclip
 
 > Enjoy it ;)
 
