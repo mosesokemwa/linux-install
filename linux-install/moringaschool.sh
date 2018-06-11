@@ -8,7 +8,7 @@
 ## - VERSION: 1.0
 ##
 
-set -eo pipefail
+set -eox pipefail
 
 has() {
   [[ -x "$(command -v "$1")" ]];
@@ -30,7 +30,8 @@ sudo apt-get install -y \
   zsh \
   curl \
   vlc browser-plugin-vlc \
-  git git-core
+  git git-core \
+  xclip
 
 ok "System updated!"
 ok "HTop"
@@ -39,6 +40,7 @@ ok "ZSH"
 ok "Curl"
 ok "VLC"
 ok "Git"
+ok "xclip"
 
 if has_not atom; then
   sudo add-apt-repository ppa:webupd8team/atom
