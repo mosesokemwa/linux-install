@@ -10,12 +10,12 @@ Just run:
 
 **prep students**
 ```console
-bash -c "$(wget -O - https://raw.githubusercontent.com/mussaimo/linux-install/master/moringaschool.sh)"
+bash -c "$(wget -O - https://raw.githubusercontent.com/mosesokemwa/linux-install/master/moringaschool.sh)"
 ```
 
 **core fullstack students**
 ```console
-bash -c "$(wget -O - https://raw.githubusercontent.com/mussaimo/linux-install/master/fullstack.sh)"
+bash -c "$(wget -O - https://raw.githubusercontent.com/mosesokemwa/linux-install/master/fullstack.sh)"
 ```
 ## Softwares that will be installed:
 
@@ -113,4 +113,4 @@ fonte: http://ssup2.iptime.org/wiki/Ubuntu_Consolas_Font_Install
 ## License
 Modified from [fdaciuk](https://github.com/fdaciuk/install-linux)
 
-[![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](https://github.com/mussaimo/licenses/blob/master/LICENSE) © Moses Okemwa
+[![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](https://github.com/mosesokemwa/licenses/blob/master/LICENSE) © Moses Okemwa
