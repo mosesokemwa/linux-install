@@ -10,12 +10,12 @@ Just run:
 
 **prep students**
 ```console
-bash -c "$(wget -O - https://raw.githubusercontent.com/mosesokemwa/linux-install/master/moringaschool.sh)"
+bash -c "$(wget -O - https://raw.githubusercontent.com/mosesokemwa/linux-install/master/linux-install/moringaschool.sh)"
 ```
 
 **core fullstack students**
 ```console
-bash -c "$(wget -O - https://raw.githubusercontent.com/mosesokemwa/linux-install/master/fullstack.sh)"
+bash -c "$(wget -O - https://raw.githubusercontent.com/mosesokemwa/linux-install/master/linux-install/fullstack.sh)"
 ```
 ## Softwares that will be installed:
 
