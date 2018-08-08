@@ -31,7 +31,9 @@ sudo apt-get install -y \
   curl \
   vlc browser-plugin-vlc \
   git git-core \
-  xclip
+  xclip\
+  software-properties-common
+
 
 ok "System updated!"
 ok "HTop"
