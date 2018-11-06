@@ -26,11 +26,22 @@ sudo apt-get update
 
 # PostgresSQL
 if has_not postgresql; then
-	sudo apt-get install postgresql \
+	sudo apt-get -y install postgresql \
 		postgresql-contrib \
 		libpq-dev
 fi
 ok "PostgreSQL"
+
+# VS Code
+if has_not code; then
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo -y install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt-get -y install apt-transport-https
+sudo apt-get update
+sudo apt-get -y install code
+fi
+ok "VS Code"
 
 if has_not mysql; then
   sudo apt-get install -y mysql-server
@@ -44,12 +55,12 @@ ok "Heroku Toolbelt"
 
 # python
 if has_not python3.6; then
-  sudo apt-get install python3.6
+  sudo apt-get -y install python3.6
 fi
 ok "Python3.6"
 
 if has_not pip; then
-  sudo apt-get install build-essential \
+  sudo apt-get -y install build-essential \
     python-dev \
     python3-dev \
     python-pip \
@@ -63,7 +74,7 @@ fi
 ok "pip"
 
 # django for python 23
-sudo apt-get install python3-django
+sudo apt-get -y install python3-django
 
 # Clean up
 sudo apt-get autoclean -y
@@ -72,8 +83,8 @@ sudo apt-get autoremove -y
 ok "Installation finished!"
 
 # Upgrading system
-sudo apt-get -f install
+sudo apt-get -y install -f 
 sudo apt-get upgrade
-sudo apt-get dist-upgrade
+sudo apt-get -y dist-upgrade
 
 ok "Sytem upgraded"
