@@ -39,6 +39,7 @@ bash -c "$(wget -O - https://raw.githubusercontent.com/mosesokemwa/linux-install
 - python 3.6
 - pip
 - xclip
+- VS Code
 
 > Enjoy it ;)
 
