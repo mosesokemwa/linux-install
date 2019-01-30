@@ -40,6 +40,7 @@ bash -c "$(wget -O - https://raw.githubusercontent.com/mosesokemwa/linux-install
 - pip
 - xclip
 - VS Code
+- Slack
 
 > Enjoy it ;)
 
