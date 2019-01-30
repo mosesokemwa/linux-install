@@ -4,7 +4,7 @@
 ##
 ## Bash install script for students learning how to codeusing Ubuntu 16.04
 ## 
-## - AUTHOR:  Moses <mussaimo> Okemwa
+## - AUTHOR:  Moses <mussaimo> Okemwa, Newton <newtonkiragu> Karanu
 ## - VERSION: 1.0
 ##
 
@@ -32,7 +32,8 @@ sudo apt-get install -y \
   vlc browser-plugin-vlc \
   git git-core \
   xclip\
-  software-properties-common
+  software-properties-common\
+  wget
 
 
 ok "System updated!"
@@ -50,6 +51,25 @@ if has_not atom; then
   sudo apt install atom
 fi
 ok "Atom installed"
+
+if has_not code; then
+  curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+  sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+  sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+  sudo apt-get -y install apt-transport-https
+  sudo apt-get update
+  sudo apt-get -y install code
+fi
+ok "VS Code"
+
+if has_not slack; then
+  cd
+  $slack = https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.7-amd64.deb
+  wget $slack
+  sudo dpkg -i ${slack##*/}
+  sudo apt-get -y install -f
+  rm -rf ${slack##*/}
+fi
 
 if has_not sublime; then
   sudo add-apt-repository ppa:webupd8team/sublime-text-3
