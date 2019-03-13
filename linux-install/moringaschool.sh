@@ -123,7 +123,6 @@ ok "Installation finished!"
 # Upgrading system
 sudo apt-get -f install
 sudo apt-get upgrade
-sudo apt-get dist-upgrade
 
 ok "System upgraded"
 
