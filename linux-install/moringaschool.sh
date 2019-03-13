@@ -64,7 +64,7 @@ ok "VS Code"
 
 if has_not slack; then
   cd
-  $slack = https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.7-amd64.deb
+  slack='https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.7-amd64.deb'
   wget $slack
   sudo dpkg -i ${slack##*/}
   sudo apt-get -y install -f
