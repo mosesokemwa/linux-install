@@ -115,4 +115,4 @@ fonte: http://ssup2.iptime.org/wiki/Ubuntu_Consolas_Font_Install
 ## License
 Modified from [fdaciuk](https://github.com/fdaciuk/install-linux)
 
-[![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](https://github.com/mosesokemwa/licenses/blob/master/LICENSE) © Moses Okemwa
+[![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](https://github.com/mosesokemwa/licenses/blob/master/LICENSE) © Moses Okemwa, Newton Karanu
