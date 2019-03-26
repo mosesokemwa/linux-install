@@ -23,6 +23,8 @@ ok() {
 }
 
 sudo apt-get update
+sudo apt-get install -y\
+	wget
 
 # PostgresSQL
 if has_not postgresql; then
@@ -72,6 +74,12 @@ if has_not pip; then
   sudo pip install --upgrade virtualenv
 fi
 ok "pip"
+
+if has_not node; then
+	wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+	nvm install node
+fi
+ok "node"
 
 # django for python 23
 sudo apt-get -y install python3-django
